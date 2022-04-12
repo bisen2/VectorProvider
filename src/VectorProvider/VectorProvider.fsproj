@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ProvidedTypes.fsi" />
+    <Compile Include="ProvidedTypes.fs" />
+    <Compile Include="GeneralUtils.fs" />
+    <Compile Include="ArithmeticUtils.fs" />
+    <Compile Include="VectorProvider.fs" />
+    <Compile Include="VectorOperators.fs" />
+  </ItemGroup>
+</Project>
