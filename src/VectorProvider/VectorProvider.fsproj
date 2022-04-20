@@ -6,8 +6,7 @@
   <ItemGroup>
     <Compile Include="ProvidedTypes.fsi" />
     <Compile Include="ProvidedTypes.fs" />
-    <Compile Include="GeneralUtils.fs" />
-    <Compile Include="ArithmeticUtils.fs" />
+    <Compile Include="IntArray.fs" />
     <Compile Include="VectorProvider.fs" />
     <Compile Include="VectorOperators.fs" />
   </ItemGroup>

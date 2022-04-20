@@ -14,7 +14,7 @@ type VectorProvider(config) as this =
 
   let asm = System.Reflection.Assembly.GetExecutingAssembly()
   let ns = "VectorProvider"
-  let baseType = Some typeof<array<int>>
+  // let baseType = Some typeof<array<int>>
   let staticParams =
     [ ProvidedStaticParameter ("dimension", typeof<uint>)
       ProvidedStaticParameter ("backingType", typeof<BackingType>, Some BackingType.IntArray) ]
@@ -25,13 +25,8 @@ type VectorProvider(config) as this =
     vecType.DefineStaticParameters (
       staticParams,
       fun typeName -> function
-        | [| :? uint as dim; :? int as bt |] ->
-            let typ = ProvidedTypeDefinition (asm, ns, typeName, baseType)
-            do
-              GeneralUtils.createCtors typ dim
-              GeneralUtils.createDimensionProperties typ dim
-              ArithmeticUtils.createArithmeticMethods typ dim
-            typ
+        | [| :? uint as dim; :? int as bt |] when bt = int BackingType.IntArray ->
+            IntArray.createTypeDefinition asm ns typeName dim
         | _ -> failwith "Invalid static parameters" )
 
   do this.AddNamespace (ns, [vecType])
