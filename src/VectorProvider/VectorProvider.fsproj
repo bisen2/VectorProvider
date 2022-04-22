@@ -6,8 +6,13 @@
   <ItemGroup>
     <Compile Include="ProvidedTypes.fsi" />
     <Compile Include="ProvidedTypes.fs" />
+    <Compile Include="Implementation.fs" />
     <Compile Include="IntArray.fs" />
+    <Compile Include="MathNetVector.fs" />
     <Compile Include="VectorProvider.fs" />
     <Compile Include="VectorOperators.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
   </ItemGroup>
 </Project>

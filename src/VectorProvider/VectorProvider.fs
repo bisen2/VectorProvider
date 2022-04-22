@@ -14,12 +14,12 @@ type VectorProvider(config) as this =
 
   let asm = System.Reflection.Assembly.GetExecutingAssembly()
   let ns = "VectorProvider"
-  // let baseType = Some typeof<array<int>>
+  let typeName = "VectorND"
   let staticParams =
-    [ ProvidedStaticParameter ("dimension", typeof<uint>)
-      ProvidedStaticParameter ("backingType", typeof<BackingType>, Some BackingType.IntArray) ]
+    [ ProvidedStaticParameter("dimension", typeof<uint>)
+      ProvidedStaticParameter("backingType", typeof<BackingType>, Some BackingType.IntArray) ]
 
-  let vecType = ProvidedTypeDefinition (asm, ns, "Vector", None)
+  let vecType = ProvidedTypeDefinition (asm, ns, typeName, None)
 
   do
     vecType.DefineStaticParameters (

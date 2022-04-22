@@ -5,7 +5,7 @@ open VectorProvider
 
 module Vec3 =
 
-  type Vec3 = Vector<3u, BackingType.IntArray>
+  type Vec3 = VectorND<3u, BackingType.IntArray>
 
   let randVectors() =
     Arb.generate<int>
