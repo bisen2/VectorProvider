@@ -14,7 +14,7 @@ module private Vec3 =
       Expect.equal v.Dimension3 0 "Dimension3 should be 0"
     }
 
-  let ctorSetsDims  (vSet: Vector<3u>)=
+  let ctorSetsDims  (vSet: Vec3)=
     test $"Non-default ctor should set dimensions for vector %A{vSet}" {
       let v = Vec3(vSet.Dimension1, vSet.Dimension2, vSet.Dimension3)
       Expect.equal v.Dimension1 vSet.Dimension1 "Dimension1 should be 1"
@@ -22,7 +22,7 @@ module private Vec3 =
       Expect.equal v.Dimension3 vSet.Dimension3 "Dimension3 should be 3"
     }
 
-  let dimensionsAreSettable (vSet: Vector<3u>) =
+  let dimensionsAreSettable (vSet: Vec3) =
     test $"All dimensions are settable to vector %A{vSet}" {
       let v = Vec3()
       Expect.equal v.Dimension1 0 "Dimension1 should be 0"
